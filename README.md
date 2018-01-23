@@ -1,4 +1,4 @@
-## H2 nativeArrayMethods
+## nativeArrayMethods
 
 ```javascript
 /******* forEach *********/
