@@ -26,4 +26,28 @@ Array.prototype.forEach = Array.prototype.forEach || function(callback, context)
 pets.myForEach(addLegs);
 
 console.log(pets);
+
+
+/***** map *******/
+let numbers = [1, 4, 9, 16];
+
+let timesTwo = el => el * 2;
+
+
+Array.prototype.myMap = Array.prototype.myMap || function(callback, context) {
+    let newArray = [];
+    let self = this;
+
+    for(let i = 0; i < self.length; i++) {
+        newArray.push(callback(self[i]));
+    }
+
+    return newArray;
+}
+
+let outputMap = numbers.map(timesTwo);
+let outputMyMap = numbers.myMap(timesTwo);
+
+console.log(outputMyMap);
+console.log(outputMyMap);
 ```
