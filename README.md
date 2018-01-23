@@ -27,8 +27,7 @@ pets.myForEach(addLegs);
 
 console.log(pets);
 
-
-/***** map *******/
+/******* map *********/
 let numbers = [1, 4, 9, 16];
 
 let timesTwo = el => el * 2;
