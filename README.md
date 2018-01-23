@@ -15,7 +15,7 @@ let pets = [
 
 let addLegs = el => el.legs = 4;
 
-Array.prototype.forEach = Array.prototype.forEach || function(callback, context) {
+Array.prototype.myForEach = function(callback, context) {
     let self = this;
     
     for(let i = 0; i < self.length; i++) {
@@ -33,7 +33,7 @@ let numbers = [1, 4, 9, 16];
 let timesTwo = el => el * 2;
 
 
-Array.prototype.myMap = Array.prototype.myMap || function(callback, context) {
+Array.prototype.myMap = function(callback, context) {
     let newArray = [];
     let self = this;
 
