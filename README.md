@@ -1,7 +1,7 @@
 ## nativeArrayMethods
 
 ```javascript
-/******* forEach *********/
+/*************************************** forEach ***************************************/
 let pets = [
     {'type': 'dog', 'sound': 'woof'},
     {'type': 'cat', 'sound': 'meow'},
@@ -27,7 +27,7 @@ pets.myForEach(addLegs);
 
 console.log(pets);
 
-/******* map *********/
+/*************************************** map ***************************************/
 let numbers = [1, 4, 9, 16];
 let timesTwo = el => el * 2;
 
