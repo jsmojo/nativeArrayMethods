@@ -1,4 +1,4 @@
-## nativeArrayMethods
+## native array methods
 
 ```javascript
 /*************************************** forEach ***************************************/
@@ -81,4 +81,50 @@ let outputMyFilter = pets.myFilter(isDog);
 
 console.log(outputFilter);
 console.log(outputMyFilter);
+
+/*************************************** every ***************************************/
+let numbers = [1, 4, 9, 16];
+let greaterThan10 = el => el > 10;
+
+Array.prototype.myEvery = Array.prototype.myEvery || function(callback, context) {
+    let self = this;
+
+    for(let i = 0; i < self.length; i++) {
+        if(!callback.call(self, self[i])){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+let outputEvery = numbers.every(greaterThan10);
+let outputMyEvery = numbers.myEvery(greaterThan10);
+
+console.log(outputEvery);
+console.log(outputMyEvery);
+
+/*************************************** some ***************************************/
+let numbers = [1, 4, 9, 16];
+
+let greaterThan10 = el => el > 10;
+
+Array.prototype.mySome = Array.prototype.mySome || function(callback, context) {
+    let self = this;
+
+    for(let i = 0; i < self.length; i++) {
+        if(callback.call(self, self[i])){
+            return true;
+        }
+    }
+
+    return false;
+}
+
+let outputSome = numbers.some(greaterThan10);
+let outputMySome = numbers.mySome(greaterThan10);
+
+console.log(outputSome);
+console.log(outputMySome);
+
 ```
