@@ -47,4 +47,38 @@ let outputMyMap = numbers.myMap(timesTwo);
 
 console.log(outputMap);
 console.log(outputMyMap);
+
+/*************************************** filter ***************************************/
+let pets = [
+    {'type': 'dog', 'sound': 'woof'},
+    {'type': 'cat', 'sound': 'meow'},
+    {'type': 'mouse', 'sound': 'squeak'},
+    {'type': 'dog', 'sound': 'bow-wow'},
+    {'type': 'dog', 'sound': 'ruff-ruff'},
+    {'type': 'mouse', 'sound': 'squeak squeak'},
+    {'type': 'cat', 'sound': 'purr'}
+];
+
+
+let isDog = el => el.type == 'dog';
+
+
+Array.prototype.myFilter = Array.prototype.myFilter || function(callback, context) {
+    let newArray = [];
+    let self = this;
+    
+    for(let i = 0; i < self.length; i++) {
+        if(callback.call(self, self[i])) {
+            newArray.push(self[i]);
+        }
+    }
+
+    return newArray; 
+}
+
+let outputFilter = pets.filter(isDog);
+let outputMyFilter = pets.myFilter(isDog);
+
+console.log(outputFilter);
+console.log(outputMyFilter);
 ```
