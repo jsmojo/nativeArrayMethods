@@ -29,16 +29,14 @@ console.log(pets);
 
 /******* map *********/
 let numbers = [1, 4, 9, 16];
-
 let timesTwo = el => el * 2;
 
-
-Array.prototype.myMap = function(callback, context) {
+Array.prototype.myMap = Array.prototype.myMap || function(callback, context) {
     let newArray = [];
     let self = this;
 
     for(let i = 0; i < self.length; i++) {
-        newArray.push(callback(self[i]));
+        newArray.push(callback.call(self, self[i]));
     }
 
     return newArray;
@@ -47,6 +45,6 @@ Array.prototype.myMap = function(callback, context) {
 let outputMap = numbers.map(timesTwo);
 let outputMyMap = numbers.myMap(timesTwo);
 
-console.log(outputMyMap);
+console.log(outputMap);
 console.log(outputMyMap);
 ```
